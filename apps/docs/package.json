@@ -14,10 +14,13 @@
     "@acme/design-system": "workspace:*",
     "@acme/pages": "workspace:*",
     "@acme/utils": "workspace:*",
+    "@tensorflow-models/coco-ssd": "^2.2.3",
+    "@tensorflow/tfjs": "^4.20.0",
     "@vercel/examples-ui": "^1.0.4",
     "next": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "react-webcam": "^7.2.0"
   },
   "devDependencies": {
     "@types/react": "latest",
