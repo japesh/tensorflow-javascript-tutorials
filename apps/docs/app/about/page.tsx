@@ -1,16 +1,14 @@
-import { Layout, Page, Text, Code, Link } from '@vercel/examples-ui'
-import Navbar from '@acme/pages/components/navbar'
+import { Code, Link, Text } from '@vercel/examples-ui'
 
-export default function Index() {
+export default function About() {
   return (
-    <Page>
-      <Navbar isDocsApp />
+    <>
       <Text variant="h1" className="mb-6">
-        Docs
+        About Docs
       </Text>
       <Text className="mb-4">
-        This is the index page in the docs app (
-        <Code>apps/docs/pages/index.tsx</Code>).
+        This is the about page in the docs app (
+        <Code>apps/docs/pages/about.tsx</Code>).
       </Text>
       <Text>
         Navigations between <Link href="/">Docs</Link> and{' '}
@@ -24,8 +22,6 @@ export default function Index() {
         </a>{' '}
         requires a page refresh because it lives in a different Next.js app.
       </Text>
-    </Page>
+    </>
   )
 }
-
-Index.Layout = Layout

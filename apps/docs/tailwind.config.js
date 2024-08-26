@@ -4,7 +4,8 @@ module.exports = {
     require('@acme/design-system/tailwind'),
   ],
   content: [
-    './pages/**/*.{js,ts,jsx,tsx}',
+    './pages/**/*.{js,ts,jsx,tsx}', 
+    './app/**/*.{js,ts,jsx,tsx,mdx}', // Note the addition of the `app` directory.
     './components/**/*.{js,ts,jsx,tsx}',
     // Add the external packages that are using Tailwind CSS
     './node_modules/@vercel/examples-ui/**/*.js',
