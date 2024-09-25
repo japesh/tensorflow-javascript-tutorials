@@ -2,9 +2,8 @@
 
 import { useEffect, useRef, useState } from 'react';
 
-import * as tf from '@tensorflow/tfjs';
 import * as cocoSsd from '@tensorflow-models/coco-ssd';
-
+import * as tf from '@tensorflow/tfjs';
 
 type Props = {};
 
@@ -79,25 +78,25 @@ export default function CocoSSDScript({}: Props) {
 
   const drawBoundingBoxes = (predictions) => {
     try {
-      if(canvasRef.current){
+      if (canvasRef.current) {
         const ctx = canvasRef.current.getContext('2d');
-       if(ctx){
-        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-        predictions.forEach((prediction) => {
-          console.log('prediction', prediction);
-          ctx.beginPath();
-          ctx.rect(...prediction.bbox);
-          ctx.lineWidth = 2;
-          ctx.strokeStyle = 'red';
-          ctx.fillStyle = 'red';
-          ctx.stroke();
-          ctx.fillText(
-            `${prediction.class} (${Math.round(prediction.score * 100)}%)`,
-            prediction.bbox[0],
-            prediction.bbox[1] > 10 ? prediction.bbox[1] - 5 : 10
-          );
-        });
-       }
+        if (ctx) {
+          ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+          predictions.forEach((prediction) => {
+            console.log('prediction', prediction);
+            ctx.beginPath();
+            ctx.rect(...prediction.bbox);
+            ctx.lineWidth = 2;
+            ctx.strokeStyle = 'red';
+            ctx.fillStyle = 'red';
+            ctx.stroke();
+            ctx.fillText(
+              `${prediction.class} (${Math.round(prediction.score * 100)}%)`,
+              prediction.bbox[0],
+              prediction.bbox[1] > 10 ? prediction.bbox[1] - 5 : 10
+            );
+          });
+        }
       }
     } catch (error) {
       console.log('error', error);

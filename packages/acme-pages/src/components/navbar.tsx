@@ -13,8 +13,12 @@ const links = [
     url: '/ ',
   },
   {
-    title: 'coco ssd',
+    title: 'CoCo SSD',
     url: '/coco-ssd ',
+  },
+  {
+    title: 'Property Price',
+    url: '/property-price ',
   },
 ]
 

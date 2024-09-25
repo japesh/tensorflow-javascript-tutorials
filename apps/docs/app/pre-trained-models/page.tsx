@@ -1,9 +1,9 @@
-'use client'
+'use client';
 
-import { Text } from '@vercel/examples-ui'
-import Script from 'next/script'
+import { Text } from '@vercel/examples-ui';
+import Script from 'next/script';
 
-type Props = {}
+type Props = {};
 
 export default function PreTrainedModels({}: Props) {
   // useEffect(() => {
@@ -26,16 +26,17 @@ export default function PreTrainedModels({}: Props) {
       <Script
         src="https://cdn.jsdelivr.net/npm/@tensorflow-models/qna"
         onLoad={() => {
+          // window.tf = tf;
           try {
-            const searchText = 'We believe cats are the real stars of YouTube.'
-            const question = 'What is important to YouTube?'
+            const searchText = 'We believe cats are the real stars of YouTube.';
+            const question = 'What is important to YouTube?';
             window.qna.load().then((model: any) => {
               model.findAnswers(question, searchText).then((answers: any) => {
-                console.log('Answers: ', answers) // Cats!
-              })
-            })
+                console.log('Answers: ', answers); // Cats!
+              });
+            });
           } catch (error) {
-            console.log('error', error)
+            console.log('error', error);
           }
         }}
       />
@@ -63,5 +64,5 @@ export default function PreTrainedModels({}: Props) {
       
       `}</pre>
     </Text>
-  )
+  );
 }
